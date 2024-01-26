@@ -33,15 +33,40 @@ int main() {
     //A pointer is a variable that stores the memory address of another variable (or function)
     int number = 10; 
     int* ptr; //stores random memory adress (not initialized)
-    int* ptr1 = nullptr; //nullptr is a constant wich represents the adress of nothing
+    int* ptr1 = nullptr; //nullptr (null pointer) is a constant wich represents the adress of nothing
     int* pnumber = &number; //pointer pnumber stores the adress of the number variable
     //std::cout << "number address: " << pnumber << std::endl; //prints an adress of number variable
     //std::cout << "pnumber address: " << &pnumber << std::endl;
     //std::cout << "Address = " << pnumber << std::endl; //prints an adress of number variable
-    //std::cout << "Value = " << *pnumber << std::endl; //"*" is an "inderection" / "derefernce operator" and it represetns value of the base object
+    //std::cout << "Value = " << *pnumber << std::endl; //"*" is an "inderection" / "derefernce operator" and it returns a value of the base object
     *pnumber = 15;
     //std::cout <<  "number = " << number << std::endl; //also we can change the value by adress using dereference operator
-    
 
+    int a = 2;
+    int b = 18;
+    int* pa = &a; 
+    int* pb = &b;
+    //std::cout << "*pa value = " << *pa << std::endl;
+    //std::cout << "*pb value = " << *pb << std::endl;
+
+    //pa = pb; //assignment one pointer to another
+    //std::cout << "*pa value = " << *pa << std::endl;
+    //std::cout << "*pb value = " << *pb << std::endl;
+    //also i'm too tired to note that we can make references to the pointers (int *p = nullptr; int *&Ref = p)
+
+    /*if (pa > pb)
+        std::cout << "pa (" << pa << ") is greater than pb ("<< pb <<")";
+    else
+        std::cout << "pb (" << pb << ") is greater than pa ("<< pa <<")";
+    */
+    
+    char c = 'N';
+    char* pc = &c;
+    int* pd = (int*)pc; //pointers type conversion
+    void* pv =  (void*)pc;
+    //std::cout << "pv=" << pv << std::endl;
+    //std::cout << "pd=" << pd << std::endl;
+
+    //TODO: Arythmetics of pointers https://metanit.com/cpp/tutorial/4.3.php
     return 0;
 }
