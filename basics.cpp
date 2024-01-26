@@ -67,6 +67,6 @@ int main() {
     //std::cout << "pv=" << pv << std::endl;
     //std::cout << "pd=" << pd << std::endl;
 
-    //TODO: Arythmetics of pointers https://metanit.com/cpp/tutorial/4.3.php
+    //TODO: Arythmetics of pointers https://metanit.com/cpp/tutorial/4.3.php 
     return 0;
 }
