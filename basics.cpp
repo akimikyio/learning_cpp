@@ -3,6 +3,11 @@
 #include <typeinfo>
 
 int main() {
+    //TODO: Unions, Classes, Structures, Functions
+
+    //Constants
+    const int pi = 3.1415;
+
     //Bitwise operators
     int result1 = 5 & 3; //AND
     int result2 = 5 | 3; //OR
@@ -67,6 +72,46 @@ int main() {
     //std::cout << "pv=" << pv << std::endl;
     //std::cout << "pd=" << pd << std::endl;
 
-    //TODO: Arythmetics of pointers https://metanit.com/cpp/tutorial/4.3.php 
+    int n = 10;
+    int* pn = &n;
+    //std::cout << "address=" << pn << "\tvalue=" << *pn << std::endl;
+    pn++;
+    //std::cout << "address=" << pn << "\tvalue=" << *pn << std::endl;
+    pn--;
+    //std::cout << "address=" << pn << "\tvalue=" << *pn << std::endl;
+
+    //TODO: constants and pointers, pointers and arrays 
+    //https://metanit.com/cpp/tutorial/4.4.php
+    //https://metanit.com/cpp/tutorial/4.5.php
+
+    //Refernces
+    int var = 5; //Refernce acts as an alias for another variable or value
+    int &refVar = var;
+    //std::cout << refVar << std::endl;
+    refVar += 20;
+    //std::cout << var << std::endl;
+
+    int numbers[] = {1, 2, 3, 4, 5, 6, 7};
+
+    /*
+    for (auto &n : numbers) { //usage of reference and for-each cycle
+        n = n * n;
+    }
+
+    for (auto n : numbers) { //checking the result
+        std::cout << n << "\t";
+    }
+    std::cout << std::endl;
+    */
+
+    //If we don't want to change values in collection and want to optimise memory usage
+    //using reference instead of new variable we can make the ref const
+
+    /*
+    for (const auto &n : numbers) {
+        std::cout << n << "\t";
+    }
+    std::cout << std::endl;
+    */
     return 0;
 }
