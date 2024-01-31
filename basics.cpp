@@ -1,6 +1,7 @@
 #include <iostream>
 #include <any>
 #include <typeinfo>
+#include <memory>
 
 int main() {
     //TODO: Unions, Classes, Structures, Functions
@@ -112,6 +113,41 @@ int main() {
         std::cout << n << "\t";
     }
     std::cout << std::endl;
+    */
+
+    //Smart Pointers
+    //unique_ptr<T> is pointer to type T. It can be only one unique_ptr which contains the same adress
+    std::unique_ptr<int> p; //ptr = nullptr
+    p = std::make_unique<int>(125); //allocates dynamic memory
+    //std::cout << "Adress: " << p.get() << std::endl; //getting adress
+    //std::cout << "Initial value: " << *p << std::endl;
+    *p = 244;
+    //std::cout << "New value: " << *p << std::endl;
+
+    //Also works with arrays
+    unsigned q = 5;
+    auto qnumbers = std::make_unique<int[]>(q);
+    /*for (unsigned i = 0; i < q; i++) {
+        qnumbers[i] = i+1;
+        std::cout << "qnumbers[" << i << "] = " << qnumbers[i] << std::endl;
+    }*/
+
+    /*
+    std::cout << "Old adress: " << p.get() << std::endl;
+    std::cout << "Old value: " << *p << std::endl;
+
+    p.reset(new int {100}); //frees memory and allocates new object and adress to the pointer
+
+    std::cout << "New address: " << p.get() << std::endl;
+    std::cout << "New value: " << *p << std::endl;
+    */
+    /*
+    p.reset(); //frees memory
+    if(!qnumbers) {
+        std::cout << "Memory is free!" << std::endl; 
+    } else {
+        std::cout << *p << std::endl;
+    }
     */
     return 0;
 }
