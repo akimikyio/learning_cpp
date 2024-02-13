@@ -3,6 +3,28 @@
 #include <typeinfo>
 #include <memory>
 
+
+//Namespaces
+namespace hello {
+    namespace messages {
+        const std::string hello = "hello";
+    }
+
+    void print_message(const std::string& message) {
+        std::cout << messages::hello << std::endl;
+    }
+
+}
+
+namespace console {
+    void foo(int i) {
+        std::cout << i << std::endl;
+    }
+}
+
+using namespace console;
+namespace mes = hello::messages;
+
 int main() {
     //TODO: Unions, Classes, Structures, Functions
 
@@ -149,5 +171,31 @@ int main() {
         std::cout << *p << std::endl;
     }
     */
+
+    //shared_ptr<T> is used to create pointers to objects that can be pointed to by multiplie pointers
+    std::shared_ptr<int> sptr; //sptr == nullptr
+    sptr = std::make_shared<int>(22);
+    //There won't be too obvious examples anymore, I'm tired
+
+    /*
+    std::shared_ptr<int> sptr1 = sptr;
+    std::cout << "sptr address: " << sptr << std::endl;
+    std::cout << "sptr value: " << *sptr << std::endl; 
+    std::cout << "sptr1 address: " << sptr1 << std::endl;
+    std::cout << "sptr1 value: " << *sptr1 << std::endl;
+    std::cout << "count of refs: " << sptr.use_count() << std::endl;
+    std::weak_ptr<int> sptr_weak(sptr); //weak_ptr doesn't increase ref count of shared_ptr1
+    */    
+    
+    //New and delete operators
+    int *ptrn = new int{5}; //creating new object of type int 
+    *ptrn = 10;
+    //std::cout << "Value: " << *ptrn << std::endl;
+    delete ptrn; //deleting object
+    //ptrn = nullptr; //nullifying pointer to avoid dangling pointer
+    
+    
+
+
     return 0;
 }
