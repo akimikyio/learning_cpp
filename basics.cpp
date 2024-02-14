@@ -2,7 +2,11 @@
 #include <any>
 #include <typeinfo>
 #include <memory>
+#include "MyClass.hpp"
 
+
+#define DEBUG
+#define IS_RELEASE 1
 
 //Namespaces
 namespace hello {
@@ -27,6 +31,21 @@ namespace mes = hello::messages;
 
 int main() {
     //TODO: Unions, Classes, Structures, Functions
+
+    #ifdef DEBUG
+    std::cout << "Debug message" << std::endl;
+    #endif
+
+    #ifndef DEBUG
+    std::cout << "Release message" << std::endl;
+    #endif
+
+    #if IS_RELEASE == 1
+    std::cout << "Release 1" << std::endl;
+    #else
+    std::cout << "Release 0" << std::endl;
+    #endif
+
 
     //Constants
     const int pi = 3.1415;
